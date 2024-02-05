@@ -1,14 +1,14 @@
 import {
   AutoIncrement,
   Column,
+  Index,
   Model,
   PrimaryKey,
   Table,
 } from 'sequelize-typescript';
 
 // TODO: 데이터 추가할 것
-@Table({ timestamps: false })
-// { freezeTableName: true }
+@Table({ freezeTableName: true, timestamps: false })
 export class Country extends Model<Country> {
   @PrimaryKey
   @AutoIncrement
@@ -17,17 +17,39 @@ export class Country extends Model<Country> {
 
   @Column
   name: string;
-  // ISO 3166-1 alpha2, two-letter country code
-  // https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
+  /**
+   * ISO 3166-1 alpha2, two-letter country code
+   * https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
+   */
+
+  @Index({
+    unique: true,
+  })
   @Column
-  codes: string;
+  code: string;
+
+  // ISO alpha-3
+  @Column
+  alpha3: string;
 
   @Column
-  capital: string;
+  country_numb_code: number;
 
   @Column
   region: string;
 
   @Column
-  timezone: string;
+  sub_region: string;
+
+  @Column
+  intermediate_region: string;
+
+  @Column
+  region_code: string;
+
+  @Column
+  sub_region_code: string;
+
+  @Column
+  intermediate_region_code: string;
 }
