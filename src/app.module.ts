@@ -1,17 +1,16 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { CountryModule } from './country/country.module';
 import { Country } from './sequelize/country.sequelize';
 import { Dialect } from 'sequelize';
 import { SequelizeModule } from '@nestjs/sequelize';
+import { CountryModule } from './country/country.module';
 
 console.log('hello');
 console.log(process.env.DB_DIALECT, process.env.DB_HOST);
 
 @Module({
   imports: [
-    // ScheduleModule.forRoot(),
     SequelizeModule.forRoot({
       dialect: process.env.DB_DIALECT as Dialect,
       host: process.env.DB_HOST,
@@ -27,6 +26,7 @@ console.log(process.env.DB_DIALECT, process.env.DB_HOST);
     CountryModule,
   ],
   controllers: [AppController],
+  exports: [],
   providers: [AppService],
 })
 export class AppModule {}
