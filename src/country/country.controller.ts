@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
 import { CountryService } from './country.service';
 
 @Controller(`country`)
@@ -9,5 +9,10 @@ export class CountryController {
   async findAll(): Promise<any> {
     console.log('country..');
     return await this.countryService.findAll();
+  }
+
+  @Get(`fact`)
+  async getCountryFact(@Query() country: string): Promise<any> {
+    return await this.countryService.getCountryFact(country);
   }
 }

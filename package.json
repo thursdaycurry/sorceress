@@ -25,6 +25,8 @@
     "@nestjs/mapped-types": "*",
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/sequelize": "^10.0.0",
+    "axios": "^1.6.7",
+    "class-validator": "^0.14.1",
     "dotenv": "^16.4.1",
     "mysql2": "^3.9.1",
     "path": "^0.12.7",

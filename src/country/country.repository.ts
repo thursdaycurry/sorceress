@@ -11,6 +11,11 @@ export class CountryRepository {
   ) {}
 
   async findAll(): Promise<Country[] | null> {
-    return await this.CountryRepository.findAll();
+    return await this.CountryRepository.findAll({
+      where: {
+        // region: 'Europe',
+        sub_region: 'Eastern Asia',
+      },
+    });
   }
 }
