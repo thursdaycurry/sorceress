@@ -14,8 +14,18 @@ export class CountryRepository {
     return await this.CountryRepository.findAll({
       where: {
         // region: 'Europe',
-        sub_region: 'Eastern Asia',
+        // sub_region: 'Eastern Asia',
       },
+      raw: true,
+    });
+  }
+
+  async getCountryByCountryCode(countryCode: string): Promise<Country | null> {
+    return await this.CountryRepository.findOne({
+      where: {
+        code: countryCode,
+      },
+      raw: true,
     });
   }
 }

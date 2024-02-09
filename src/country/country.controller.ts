@@ -1,5 +1,7 @@
 import { Controller, Get, Query } from '@nestjs/common';
+import { Country } from 'src/sequelize/country.sequelize';
 import { CountryService } from './country.service';
+import { GetFactDto } from './dto/GetFact.dto';
 
 @Controller(`country`)
 export class CountryController {
@@ -7,12 +9,11 @@ export class CountryController {
 
   @Get()
   async findAll(): Promise<any> {
-    console.log('country..');
     return await this.countryService.findAll();
   }
 
   @Get(`fact`)
-  async getCountryFact(@Query() country: string): Promise<any> {
-    return await this.countryService.getCountryFact(country);
+  async getCountryFact(@Query() getFactDto: GetFactDto): Promise<Country[]> {
+    return await this.countryService.getCountryFact(getFactDto);
   }
 }

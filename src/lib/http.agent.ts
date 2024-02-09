@@ -19,17 +19,11 @@ export type HttpAgentResult<REQ, RES> = {
 
 // TODO: abstract는 왜 들어가지?
 export abstract class HttpAgent {
-  protected async get<T = any>(
-    url: string,
-    config?: AxiosRequestConfig,
-    queryString?: string,
-  ): Promise<HttpAgentResponse<T>> {
-    return axios
-      .get<T>(`${url}${queryString ? `?${queryString}` : ``}`, config)
-      .then((response) => ({
-        data: response.data,
-        statusCode: response.status,
-      }));
+  protected async get<T = any>(url: string, config?: AxiosRequestConfig, queryString?: string): Promise<HttpAgentResponse<T>> {
+    return axios.get<T>(`${url}${queryString ? `?${queryString}` : ``}`, config).then((response) => ({
+      data: response.data,
+      statusCode: response.status,
+    }));
     //TODO: catch(err) 생략
   }
 

@@ -44,6 +44,14 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
+  // DTO 프로퍼티 대문자 변환 등을 위해 ValidationPipe 등록 필요
+  app.useGlobalPipes(
+    new ValidationPipe({
+      transform: true,
+    }),
+  );
+
   app.enableCors({
     origin: [`http://localhost:3000`],
     credentials: true,

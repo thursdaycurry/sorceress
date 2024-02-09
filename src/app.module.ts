@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common';
+import { SequelizeModule } from '@nestjs/sequelize';
+import { Dialect } from 'sequelize';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { Country } from './sequelize/country.sequelize';
-import { Dialect } from 'sequelize';
-import { SequelizeModule } from '@nestjs/sequelize';
+import { ConsciousModule } from './conscious/conscious.module';
 import { CountryModule } from './country/country.module';
+import { EnergyModule } from './energy/energy.module';
+import { Country } from './sequelize/country.sequelize';
 
 console.log('hello');
 console.log(process.env.DB_DIALECT, process.env.DB_HOST);
@@ -24,6 +26,8 @@ console.log(process.env.DB_DIALECT, process.env.DB_HOST);
       synchronize: true,
     }),
     CountryModule,
+    ConsciousModule,
+    EnergyModule,
   ],
   controllers: [AppController],
   exports: [],
