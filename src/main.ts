@@ -1,15 +1,11 @@
+import { ValidationPipe } from '@nestjs/common';
 import * as dotenv from 'dotenv';
 import * as path from 'path';
-import { ValidationPipe } from '@nestjs/common';
 
 const envInit = async () => {
   dotenv.config({
     path: path.resolve(
-      process.env.ENV_PATH ?? '' + process.env.NODE_ENV === 'prod'
-        ? '.env'
-        : process.env.NODE_ENV === 'dev'
-        ? '.env.dev'
-        : '.env.test',
+      process.env.ENV_PATH ?? '' + process.env.NODE_ENV === 'prod' ? '.env' : process.env.NODE_ENV === 'dev' ? '.env.dev' : '.env.test',
     ),
   });
 };

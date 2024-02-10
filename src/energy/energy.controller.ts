@@ -1,4 +1,5 @@
 import { Controller, Get, Query, Res } from '@nestjs/common';
+
 import { GetFactDto } from 'src/country/dto/GetFact.dto';
 import { EnergyService } from './energy.service';
 const AdmZip = require('adm-zip');
