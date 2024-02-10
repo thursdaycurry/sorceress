@@ -1,7 +1,7 @@
 import { Controller, Get, Query, Res } from '@nestjs/common';
 import { GetFactDto } from 'src/country/dto/GetFact.dto';
 import { EnergyService } from './energy.service';
-var AdmZip = require('adm-zip');
+const AdmZip = require('adm-zip');
 
 @Controller(`energy`)
 export class EnergyController {
