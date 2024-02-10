@@ -1,7 +1,7 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { CountryAgent } from './country.agent';
 import { CountryRepository } from './country.repository';
-import { GetFactDto } from './dto/GetFact.dto';
+import { GetFactDto } from './dto/getFact.dto';
 
 @Injectable()
 export class CountryService {

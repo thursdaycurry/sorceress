@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import * as papa from 'papaparse';
 import { CountryService } from 'src/country/country.service';
-import { GetFactDto } from 'src/country/dto/GetFact.dto';
+import { GetFactDto } from 'src/country/dto/getFact.dto';
 
 @Injectable()
 export class EnergyService {
