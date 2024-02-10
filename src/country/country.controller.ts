@@ -1,7 +1,7 @@
 import { Controller, Get, Query } from '@nestjs/common';
 import { Country } from 'src/sequelize/country.sequelize';
 import { CountryService } from './country.service';
-import { GetFactDto } from './dto/GetFact.dto';
+import { GetFactDto } from './dto/getFact.dto';
 
 @Controller(`country`)
 export class CountryController {
