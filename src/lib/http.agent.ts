@@ -17,14 +17,16 @@ export type HttpAgentResult<REQ, RES> = {
   readonly response?: HttpAgentResponse<RES>;
 };
 
-// TODO: abstract는 왜 들어가지?
+/**
+ * 자식 클래스에서 오버라이딩해서 사용하기 위해 추상 클래스 적용
+ */
 export abstract class HttpAgent {
   protected async get<T = any>(url: string, config?: AxiosRequestConfig, queryString?: string): Promise<HttpAgentResponse<T>> {
     return axios.get<T>(`${url}${queryString ? `?${queryString}` : ``}`, config).then((response) => ({
       data: response.data,
       statusCode: response.status,
     }));
-    //TODO: catch(err) 생략
+    //TODO: catch(err) 추가
   }
 
   protected async post<T extends Record<string, unknown>, E = any, P = any>(
