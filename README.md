@@ -1,3 +1,15 @@
+## Check this
+
+- node version : v18.18.2
+
+## Develop history
+
+- 2024-02-15 : 어플리케이션 AWS EC2 배포
+
+## Todo
+
+- [] 환경 변수 설정 및 실행 환경 분리
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
