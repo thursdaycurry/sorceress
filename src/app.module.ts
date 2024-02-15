@@ -7,6 +7,7 @@ import { ConsciousModule } from './conscious/conscious.module';
 import { CountryModule } from './country/country.module';
 import { EnergyModule } from './energy/energy.module';
 import { Country } from './sequelize/country.sequelize';
+import { FinanceModule } from './finance/finance.module';
 
 console.log('hello');
 console.log(process.env.DB_DIALECT, process.env.DB_HOST);
@@ -28,6 +29,7 @@ console.log(process.env.DB_DIALECT, process.env.DB_HOST);
     CountryModule,
     ConsciousModule,
     EnergyModule,
+    FinanceModule,
   ],
   controllers: [AppController],
   exports: [],
