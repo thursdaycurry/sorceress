@@ -49,7 +49,7 @@ async function bootstrap() {
   );
 
   app.enableCors({
-    origin: [`http://localhost:3000`, `http://localhost:3001`, `https://sorceress-client.vercel.app/`],
+    origin: [`http://localhost:3000`, `http://localhost:3001`, `https://sorceress-client.vercel.app`],
     credentials: true,
   });
 
