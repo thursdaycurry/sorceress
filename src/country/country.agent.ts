@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 
 import * as qs from 'qs';
-import { HttpAgent, HttpAgentResult } from 'src/lib/http.agent';
+import { HttpAgent, HttpAgentResult } from 'src/common/http.agent';
 
 @Injectable()
 export class CountryAgent extends HttpAgent {

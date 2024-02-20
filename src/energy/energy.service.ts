@@ -40,8 +40,6 @@ export class EnergyService {
       return result;
     };
 
-    console.log(filteredCountrySource);
-
     return filteredCountrySource.map(convertToTable);
   }
 

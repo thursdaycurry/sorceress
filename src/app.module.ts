@@ -6,8 +6,8 @@ import { AppService } from './app.service';
 import { ConsciousModule } from './conscious/conscious.module';
 import { CountryModule } from './country/country.module';
 import { EnergyModule } from './energy/energy.module';
-import { Country } from './sequelize/country.sequelize';
 import { FinanceModule } from './finance/finance.module';
+import { Country } from './sequelize/country.sequelize';
 
 console.log('hello');
 console.log(process.env.DB_DIALECT, process.env.DB_HOST);
